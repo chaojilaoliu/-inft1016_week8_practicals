@@ -22,7 +22,7 @@
         text-align: center;
         margin: 0 10px;
       }
-       h3,p:not(:first-of-type) {
+      .section-box {
         border: 3px solid cyan;
         padding: 10px;
         
