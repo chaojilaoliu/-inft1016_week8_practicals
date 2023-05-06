@@ -5,7 +5,14 @@
    <title>My page title</title>    
    <link rel="stylesheet" href="base.css">    
    <script>
-    
+     function toggleTheme() {
+        var theme = document.documentElement.getAttribute('data-theme');
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    }
    </script>  
   </head>  
   <body>    
@@ -32,10 +39,22 @@
         <li><a href="#">White-headed Stilt</a></li>        
         <li><a href="#">Inland Thornbill</a></li>     
         <li><a href="#">Rose Robin</a></li> 
-      </ul>       
+      </ul>  
+      <input type="text" id="myText" placeholder="Some text...">
+
+   <button onclick="myFunction()">Try it</button>
+   
+   <p id="demo"></p>
+   
+   <script>
+   function myFunction() {
+     var x = document.getElementById("myText").value;
+     document.getElementById("demo").innerHTML = x;
+   }
+   </script>     
    <form>
     <input type="text" name="user_name" placeholder="Enter your name!">         
-    <button type="submit">Apply!</button>   
+     
     <h1>Bird Images</h1>
     <img id="bird-image" src="http://www.outgrabe.net/bird00.jpg" alt="Pardalote">
     <p id="photographer">Pardalote by fir002 (CC-by-NC)</p>
