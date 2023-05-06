@@ -1,15 +1,19 @@
 <!DOCTYPE html>
- <html>  
+<html>  
   <head>    
    <meta charset="utf-8">    
    <title>My page title</title>    
    <link rel="stylesheet" href="base.css">    
-   <script></script>  
+   <script>
+    
+   </script>  
   </head>  
   <body>    
     <header>      
       <h1>Header</h1>      
-      <button onclick="">Toggle Theme</button>    
+      <html data-theme="light"></html>
+      <button onclick="toggleTheme（）">Toggle Theme</button>   
+      
     </header>    
     <nav>      
       <ul>        
@@ -19,9 +23,51 @@
         <li><a href="#">Inland Thornbill</a></li>     
         <li><a href="#">Rose Robin</a></li> 
       </ul>       
-   <form>         
-     <input type="text" name="user_name" placeholder="Enter your name!">         
-     <button type="submit">Apply!</button>       
+   <form>
+    <input type="text" name="user_name" placeholder="Enter your name!">         
+    <button type="submit">Apply!</button>   
+    <h1>Bird Images</h1>
+    <img id="bird-image" src="http://www.outgrabe.net/bird00.jpg" alt="Pardalote">
+    <p id="photographer">Pardalote by fir002 (CC-by-NC)</p>
+    <button onclick="showPardalote()">Pardalote</button>
+    <button onclick="showPurpleSwamp()">Purple Swamp</button>
+    <button onclick="showWhiteHeadedStilt()">White-headed Stilt</button>
+    <button onclick="showInlandThornbill()">Inland Thornbill</button>
+    <button onclick="showRoseRobin()">Rose Robin</button>
+
+    <script>
+     function toggleTheme() {
+       const html = document.querySelector('html');
+       const currentTheme = html.getAttribute('data-theme');
+       const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+       html.setAttribute('data-theme', newTheme);
+      }
+      function showPardalote() {
+        document.getElementById("bird-image").src = "http://www.outgrabe.net/bird00.jpg";
+        document.getElementById("photographer").textContent = "Pardalote by fir002 (CC-by-NC)";
+      }
+
+      function showPurpleSwamp() {
+        document.getElementById("bird-image").src = "http://www.outgrabe.net/bird01.jpg";
+        document.getElementById("photographer").textContent = "Purple swamp hen by Toby Hudson (CC-by-SA)";
+      }
+
+      function showWhiteHeadedStilt() {
+        document.getElementById("bird-image").src = "http://www.outgrabe.net/bird02.jpg";
+        document.getElementById("photographer").textContent = "White-headed Stilt by JJ Harrison (CC-by-SA)";
+      }
+
+      function showInlandThornbill() {
+        document.getElementById("bird-image").src = "http://www.outgrabe.net/bird03.jpg";
+        document.getElementById("photographer").textContent = "Inland Hornbill by Peter Jacobs (CC-by-SA)";
+      }
+
+      function showRoseRobin() {
+        document.getElementById("bird-image").src = "http://www.outgrabe.net/bird04.jpg";
+        document.getElementById("photographer").textContent = "Rose Robin by JJ Harrison (CC-by-SA)";
+      }
+    </script>         
+        
    </form>     
   </nav>    
   <main>      
