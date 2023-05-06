@@ -11,7 +11,7 @@
   <body>    
     <header>      
       <h1>Header</h1>      
-      <html data-theme="light"></html>
+      
       <button onclick="toggleTheme（）">Toggle Theme</button>   
       
     </header>    
@@ -37,11 +37,13 @@
 
     <script>
      function toggleTheme() {
-       const html = document.querySelector('html');
-       const currentTheme = html.getAttribute('data-theme');
-       const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-       html.setAttribute('data-theme', newTheme);
-      }
+  var theme = document.documentElement.getAttribute('data-theme');
+  if (theme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'light');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+}
       function showPardalote() {
         document.getElementById("bird-image").src = "http://www.outgrabe.net/bird00.jpg";
         document.getElementById("photographer").textContent = "Pardalote by fir002 (CC-by-NC)";
