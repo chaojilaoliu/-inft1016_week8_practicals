@@ -12,6 +12,10 @@ body {
         --secondary-color: #333;
         --background-color: #111;
       }
+      body {
+        color: var(--primary-color);
+        background-color: var(--background-color);
+      }
     header, footer {
         background-color: rgb(7 54 66);
       }
