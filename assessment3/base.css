@@ -1,10 +1,22 @@
 body {
-    background-color: rgb(0, 43, 54); }
+    
+     }
+     :root {
+        --primary-color: rgb(255, 255, 255);
+        --secondary-color: #ccc;
+        --background-color: #fff;
+      }
+      
+      [data-theme="dark"] {
+        --primary-color: rgb(0, 0, 0);
+        --secondary-color: #333;
+        --background-color: #111;
+      }
     header, footer {
         background-color: rgb(7 54 66);
       }
       body, header, footer {
-        color: rgb(232, 237, 239)
+        color: rgb(1, 13, 18)
       }
       article a {
         color: magenta;
@@ -21,6 +33,7 @@ body {
         text-align: center;
         margin: 0 10px;
       }
+    
       .section-box {
         border: 3px solid cyan;
         padding: 10px;
