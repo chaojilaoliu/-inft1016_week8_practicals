@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light"></htmllang>>  
+<html lang="en" data-theme="light"></html>>  
   <head>    
    <meta charset="utf-8">    
    <title>My page title</title>    
@@ -13,7 +13,17 @@
       <h1>Header</h1>      
       
       <button onclick="toggleTheme（）">Toggle Theme</button>   
-      
+      <script>
+        function toggleTheme() {
+           var theme = document.documentElement.getAttribute('data-theme');
+           if (theme === 'dark') {
+           document.documentElement.setAttribute('data-theme', 'light');
+           } 
+           else {
+           document.documentElement.setAttribute('data-theme', 'dark');
+           }
+          }
+       </script>    
     </header>    
     <nav>      
       <ul>        
@@ -36,14 +46,11 @@
     <button onclick="showRoseRobin()">Rose Robin</button>
 
     <script>
-     function toggleTheme() {
-  var theme = document.documentElement.getAttribute('data-theme');
-  if (theme === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'light');
-  } else {
-    document.documentElement.setAttribute('data-theme', 'dark');
-  }
-}
+     
+
+
+
+
       function showPardalote() {
         document.getElementById("bird-image").src = "http://www.outgrabe.net/bird00.jpg";
         document.getElementById("photographer").textContent = "Pardalote by fir002 (CC-by-NC)";
