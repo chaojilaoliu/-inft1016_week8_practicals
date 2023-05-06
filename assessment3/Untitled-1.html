@@ -19,18 +19,8 @@
     <header>      
       <h1>Header</h1>      
       
-      <button onclick="toggleTheme（）">Toggle Theme</button>   
-      <script>
-        function toggleTheme() {
-           var theme = document.documentElement.getAttribute('data-theme');
-           if (theme === 'dark') {
-           document.documentElement.setAttribute('data-theme', 'light');
-           } 
-           else {
-           document.documentElement.setAttribute('data-theme', 'dark');
-           }
-          }
-       </script>    
+      <button onclick="toggleTheme()">Toggle Theme</button>   
+      
     </header>    
     <nav>      
       <ul>        
@@ -40,19 +30,22 @@
         <li><a href="#">Inland Thornbill</a></li>     
         <li><a href="#">Rose Robin</a></li> 
       </ul>  
-      <input type="text" id="myText" placeholder="Enter your name!">
+      
+      <h1 id="heading">Hello, User!</h1>  
+    <input type="text" id="myText" placeholder="Enter your name!"> 
+    <button onclick="myFunction()">Apply!</button>
 
-   <button onclick="myFunction()">Try it</button>
-   
-   <p id="demo"></p>
-   
-   <script>
-   function myFunction() {
-     var x = document.getElementById("myText").value;
-     document.getElementById("demo").innerHTML = x;
-   }
-   </script>     
-   <form>
+    <script>
+    function myFunction() {
+      var x = document.getElementById("myText").value;
+      document.getElementById("heading").textContent = "Hello, " + x + "!"
+    }
+    </script>
+    
+
+
+
+    
     
     <h1>Bird Images</h1>
     <img id="bird-image" src="http://www.outgrabe.net/bird00.jpg" alt="Pardalote">
@@ -95,7 +88,7 @@
       }
     </script>         
         
-   </form>     
+       
   </nav>    
   <main>      
   <article>        
