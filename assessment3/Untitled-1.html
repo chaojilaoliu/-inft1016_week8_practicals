@@ -42,10 +42,48 @@
     }
     </script>
     
+    <script>
+        const preferredTheme = localStorage.getItem('preferredTheme');
+
+// Set the theme to the preferred theme, if available
+if (preferredTheme) {
+  document.documentElement.setAttribute('data-theme', preferredTheme);
+}
+
+// Toggle the theme when the button is clicked
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  
+  // Store the new theme in local storage
+  localStorage.setItem('preferredTheme', newTheme);
+}
+
+// Check if the user's name is in the query string
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const userName = urlParams.get('user_name');
+
+// If the user's name is not in the query string, check local storage
+if (!userName) {
+  const storedName = localStorage.getItem('userName');
+  if (storedName) {
+    // Set the user's name to the stored value
+    document.getElementById('username').textContent = storedName;
+  }
+} else {
+  // Set the user's name to the value in the query string
+  document.getElementById('username').textContent = userName;
+  
+  // Store the user's name in local storage
+  localStorage.setItem('userName', userName);
+}
 
 
+       </script> 
 
-    
+
     
     <h1>Bird Images</h1>
     <img id="bird-image" src="http://www.outgrabe.net/bird00.jpg" alt="Pardalote">
