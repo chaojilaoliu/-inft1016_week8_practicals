@@ -15,7 +15,7 @@
     }
    </script>  
   </head>  
-  <body>    
+  <body>   
     <header>      
       <h1>Header</h1>      
       
@@ -40,6 +40,7 @@
       var x = document.getElementById("myText").value;
       document.getElementById("heading").textContent = "Hello, " + x + "!";
       localStorage.setItem("username", x);
+      
     }
 
     var storedName = localStorage.getItem("username");
