@@ -2,7 +2,7 @@
 <html lang="en" data-theme="light"></html>>  
   <head>    
    <meta charset="utf-8">    
-   <title>My page title</title>    
+   <title>Assessment3</title>    
    <link rel="stylesheet" href="base.css">    
    <script>
      function toggleTheme() {
@@ -31,54 +31,36 @@
         <li><a href="#">Rose Robin</a></li> 
       </ul>  
       
-      <h1 id="heading">Hello, User!</h1>  
-    <input type="text" id="myText" placeholder="Enter your name!"> 
-    <button onclick="myFunction()">Apply!</button>
+      <h1 id="heading">Hello!</h1>
+  <input type="text" id="myText" placeholder="Enter your name!"> 
+  <button onclick="myFunction()">Apply!</button>
 
-    <script>
+  <script>
     function myFunction() {
       var x = document.getElementById("myText").value;
-      document.getElementById("heading").textContent = "Hello, " + x + "!"
+      document.getElementById("heading").textContent = "Hello, " + x + "!";
+      localStorage.setItem("username", x);
     }
-    </script>
-    
+
+    var storedName = localStorage.getItem("username");
+    if (storedName) {
+      document.getElementById("heading").textContent = "Hello, " + storedName + "!";
+    }
+  </script>
+     
     <script>
         const preferredTheme = localStorage.getItem('preferredTheme');
-
-// Set the theme to the preferred theme, if available
 if (preferredTheme) {
   document.documentElement.setAttribute('data-theme', preferredTheme);
 }
-
-// Toggle the theme when the button is clicked
 function toggleTheme() {
   const currentTheme = document.documentElement.getAttribute('data-theme');
   const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', newTheme);
-  
-  // Store the new theme in local storage
+  document.documentElement.setAttribute('data-theme', newTheme); 
   localStorage.setItem('preferredTheme', newTheme);
 }
 
-// Check if the user's name is in the query string
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const userName = urlParams.get('user_name');
 
-// If the user's name is not in the query string, check local storage
-if (!userName) {
-  const storedName = localStorage.getItem('userName');
-  if (storedName) {
-    // Set the user's name to the stored value
-    document.getElementById('username').textContent = storedName;
-  }
-} else {
-  // Set the user's name to the value in the query string
-  document.getElementById('username').textContent = userName;
-  
-  // Store the user's name in local storage
-  localStorage.setItem('userName', userName);
-}
 
 
        </script> 
